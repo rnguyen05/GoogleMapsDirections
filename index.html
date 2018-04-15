@@ -95,19 +95,16 @@
           });
   
           new AutocompleteDirectionsHandler(map);
+        //}
+          //Added Marker code
+          marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            position: {lat: 34.251268, lng: -118.441183}
+          });
+          marker.addListener('click', toggleBounce);
         }
-  
-
-        //Start Marker code
-        marker = new google.maps.Marker({
-          map: map,
-          draggable: true,
-          animation: google.maps.Animation.DROP,
-          position: {lat: 59.327, lng: 18.067}
-        });
-        marker.addListener('click', toggleBounce);
-      }
-
       function toggleBounce() {
         if (marker.getAnimation() !== null) {
           marker.setAnimation(null);
