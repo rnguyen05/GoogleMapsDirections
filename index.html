@@ -129,7 +129,7 @@
       <!-- <input id="autocomplete" placeholder="Enter your address"
              onFocus="geolocate()" type="text"></input> -->
 
-      <input id="origin-input" class="controls" type="text"
+      <input id="origin_input" class="controls" type="text"
       placeholder="Enter Your Address" onFocus="geolocate()">
     
 
@@ -192,7 +192,7 @@
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      var placeSearch, autocomplete;
+      var placeSearch, origin_input;
       var componentForm = {
         street_number: 'short_name',
         route: 'long_name',
@@ -205,18 +205,18 @@
       function initAutocomplete() {
         // Create the autocomplete object, restricting the search to geographical
         // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('origin-input')),
+        origin_input = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('origin_input')),
             {types: ['geocode']});
 
         // When the user selects an address from the dropdown, populate the address
         // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
+        origin_input.addListener('place_changed', fillInAddress);
       }
 
       function fillInAddress() {
         // Get the place details from the autocomplete object.
-        var place = autocomplete.getPlace();
+        var place = origin_input.getPlace();
 
         for (var component in componentForm) {
           document.getElementById(component).value = '';
@@ -247,7 +247,7 @@
               center: geolocation,
               radius: position.coords.accuracy
             });
-            autocomplete.setBounds(circle.getBounds());
+            origin_input.setBounds(circle.getBounds());
           });
         }
       }
