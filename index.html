@@ -91,7 +91,7 @@
           var map = new google.maps.Map(document.getElementById('map'), {
             mapTypeControl: false,
             center: {lat: 34.251268, lng: -118.441183},
-            zoom: 16
+            zoom: 18
           });
   
           new AutocompleteDirectionsHandler(map);
@@ -99,7 +99,7 @@
           //Added Marker code
           marker = new google.maps.Marker({
             map: map,
-            draggable: true,
+            draggable: false,
             animation: google.maps.Animation.DROP,
             position: {lat: 34.251268, lng: -118.441183}
           });
