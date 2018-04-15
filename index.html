@@ -69,7 +69,7 @@
       <input id="origin_input" class="controls" type="text"
         placeholder="Enter Your Address" onFocus="geolocate()">
       
-        <input id="origin_input" class="controls" type="text"
+        <input id="origin-input" class="controls" type="text"
         placeholder="9936 Beachy Ave. Arleta, CA 91331" onFocus="geolocate()">
 
       <input id="destination-input" class="controls" type="text"
@@ -95,7 +95,7 @@
         // Create the autocomplete object, restricting the search to geographical
         // location types.
         origin_input = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('origin_input')),
+            /** @type {!HTMLInputElement} */(document.getElementById('origin-input')),
             {types: ['geocode']});
       }
 
