@@ -87,6 +87,8 @@
   <div id="map"></div>
 
   <script>
+    //This is map with start and end destinations, map marker is also added
+
     var placeSearch, autocomplete, marker;
 
     function initAutocomplete() {
@@ -103,8 +105,6 @@
         center: { lat: 34.251268, lng: -118.441183 },
         zoom: 18
       });
-
-      //new AutocompleteDirectionsHandler(map);
 
       //Added Marker code
       marker = new google.maps.Marker({
