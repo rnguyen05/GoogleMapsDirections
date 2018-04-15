@@ -96,12 +96,14 @@
   
           new AutocompleteDirectionsHandler(map);
         //}
+
           //Added Marker code
           marker = new google.maps.Marker({
             map: map,
             draggable: false,
             animation: google.maps.Animation.DROP,
-            position: {lat: 34.251268, lng: -118.441183}
+            position: {lat: 34.251268, lng: -118.441183},
+            title: 'Vietnamese Evangelical Church (Hội Thánh Tin Lành Việt Nam) North Hollywood'
           });
           marker.addListener('click', toggleBounce);
         }
