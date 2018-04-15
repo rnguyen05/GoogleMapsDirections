@@ -26,6 +26,63 @@
     </style>
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
     <style>
+
+
+      /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+         #map {
+          height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        .controls {
+          margin-top: 10px;
+          border: 1px solid transparent;
+          border-radius: 2px 0 0 2px;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          height: 32px;
+          outline: none;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+  
+        #origin-input,
+        #destination-input {
+          background-color: #fff;
+          font-family: Roboto;
+          font-size: 15px;
+          font-weight: 300;
+          margin-left: 12px;
+          padding: 0 11px 0 13px;
+          text-overflow: ellipsis;
+          width: 200px;
+        }
+  
+        #origin-input:focus,
+        #destination-input:focus {
+          border-color: #4d90fe;
+        }
+  
+        #mode-selector {
+          color: #fff;
+          background-color: #4d90fe;
+          margin-left: 12px;
+          padding: 5px 11px 0px 11px;
+        }
+  
+        #mode-selector label {
+          font-family: Roboto;
+          font-size: 13px;
+          font-weight: 300;
+        }
+
+
+
+/*         
       #locationField, #controls {
         position: relative;
         width: 480px;
@@ -63,7 +120,7 @@
       #locationField {
         height: 20px;
         margin-bottom: 2px;
-      }
+      } */
     </style>
   </head>
 
@@ -73,7 +130,26 @@
              onFocus="geolocate()" type="text"></input>
     </div>
 
-    <table id="address">
+    <input id="origin-input" class="controls" type="text"
+    placeholder="Enter Your Address" onFocus="geolocate()">
+
+    <input id="destination-input" class="controls" type="text"
+        placeholder="9936 Beachy Ave. Arleta, CA 91331">
+
+    <div id="mode-selector" class="controls">
+      <input type="radio" name="type" id="changemode-walking" checked="checked">
+      <label for="changemode-walking">Walking</label>
+
+      <input type="radio" name="type" id="changemode-transit">
+      <label for="changemode-transit">Transit</label>
+
+      <input type="radio" name="type" id="changemode-driving">
+      <label for="changemode-driving">Driving</label>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- <table id="address">
       <tr>
         <td class="label">Street address</td>
         <td class="slimField"><input class="field" id="street_number"
@@ -87,7 +163,7 @@
              You may need to adjust it for the locations relevant to your app. See
              https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
         -->
-        <td class="wideField" colspan="3"><input class="field" id="locality"
+        <!-- <td class="wideField" colspan="3"><input class="field" id="locality"
               disabled="true"></input></td>
       </tr>
       <tr>
@@ -103,7 +179,7 @@
         <td class="wideField" colspan="3"><input class="field"
               id="country" disabled="true"></input></td>
       </tr>
-    </table>
+    </table> --> 
 
     <script>
       // This example displays an address form, using the autocomplete feature
