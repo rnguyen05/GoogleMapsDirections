@@ -61,7 +61,7 @@
       </style>
     </head>
     <body>
-      <input id="origin-input" class="controls" type="text"
+    <input id="origin-input" class="controls" type="text"
           placeholder="Enter an origin location">
   
       <input id="destination-input" class="controls" type="text"
@@ -85,6 +85,7 @@
         // parameter when you first load the API. For example:
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
   
+        key = "AIzaSyAlvNNu33wLTWD5g2DwWs61iWawPsb5fPM";
         function initMap() {
           var map = new google.maps.Map(document.getElementById('map'), {
             mapTypeControl: false,
@@ -174,10 +175,13 @@
               window.alert('Directions request failed due to ' + status);
             }
           });
-        };
+        }; 
+
+
+
   
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlvNNu33wLTWD5g2DwWs61iWawPsb5fPM&libraries=places&callback=initMap"
+      <script src="https://maps.googleapis.com/maps/api/js?key="+key+"&libraries=places&callback=initMap"
           async defer></script>
     
 </body>
